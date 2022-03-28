@@ -1,12 +1,12 @@
 
 
 body {
-  background-color:#e9ecef;
+  background-color: #ec7e16;
  
 }
 
 i {
-  padding-right: 8px;
+  padding-right: 5px;
 }
 
 .centered {
@@ -21,11 +21,7 @@ i {
 
 }
 
-.container-login{
-  text-align: left;
-}
-
-.container-home{
+.container{
   text-align: center;
 }
 
