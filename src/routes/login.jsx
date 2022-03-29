@@ -33,12 +33,11 @@ function Login(props) {
       username: user.username,
       password: user.password,
     }),  })
-      .then((res) => 
-        res.json()).then( data=> {
+      .then((res) => {
       
         setUser({ username: "", password: "" });
      
-        console.log(data);
+        console.log(res.json());
         console.log("?")
        // navigate("/secrets", {state: {isLogged:res.data}});
    
