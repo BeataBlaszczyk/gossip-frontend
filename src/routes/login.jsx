@@ -27,11 +27,7 @@ function Login(props) {
       username: user.username,
       password: user.password,
     }, {
-      withCredentials: true, crossDomain: true,  headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Headers, Set-Cookie"
-      }}).then((res) => {
+      withCredentials: true, crossDomain: true, headers: {"Content-Type": "application/json"} }).then((res) => {
      
       
         setUser({ username: "", password: "" });
