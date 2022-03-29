@@ -22,12 +22,17 @@ function Login(props) {
 
   function log() {
 
-    Axios.post(props.link, {
+    fetch(props.link, {
+      method: "POST",
+      withCredentials: true, 
+      crossDomain: true, 
+      headers: {"Content-Type": "application/json"},
+    body: SON.stringify({
       
       username: user.username,
       password: user.password,
-    }, {
-      withCredentials: true, crossDomain: true, headers: {"Content-Type": "application/json"} }).then((res) => {
+    }),  })
+      .then((res) => {
      
       
         setUser({ username: "", password: "" });
