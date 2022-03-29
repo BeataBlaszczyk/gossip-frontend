@@ -34,16 +34,12 @@ function Login(props) {
       password: user.password,
     }),  })
       .then((res) => {
-      
-        setUser({ username: "", password: "" });
-     
-        console.log(res.data);
+         setUser({ username: "", password: "" });
+        console.log(res);
+        res.json().then((data)=>{console.log(data)});
         console.log("?")
-       // navigate("/secrets", {state: {isLogged:res.data}});
-   
-      //     });
     });
-  }
+  };
 
   return (
     <div className=" container container-login mt-5">
