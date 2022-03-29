@@ -33,8 +33,8 @@ function Login(props) {
       username: user.username,
       password: user.password,
     }),  })
-      .then((res) => {
-        res.json()}).then( data=> {
+      .then((res) => 
+        res.json()).then( data=> {
       
         setUser({ username: "", password: "" });
      
