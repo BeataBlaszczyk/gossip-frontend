@@ -26,7 +26,6 @@ function Login(props) {
       method: "POST",
       withCredentials: true, 
       crossDomain: true, 
-      mode: "no-cors",
       headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
       
