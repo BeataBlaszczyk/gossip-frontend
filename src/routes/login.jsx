@@ -34,11 +34,11 @@ function Login(props) {
       password: user.password,
     }),  })
       .then((res) => {
-     
+        res.json()}).then( data=> {
       
         setUser({ username: "", password: "" });
      
-        console.log(res.data);
+        console.log(data);
         console.log("?")
        // navigate("/secrets", {state: {isLogged:res.data}});
    
