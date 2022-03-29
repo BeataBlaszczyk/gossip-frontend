@@ -37,7 +37,7 @@ function Login(props) {
       
         setUser({ username: "", password: "" });
      
-        console.log(res.json());
+        console.log(res.data);
         console.log("?")
        // navigate("/secrets", {state: {isLogged:res.data}});
    
