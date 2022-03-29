@@ -26,6 +26,7 @@ function Login(props) {
       method: "POST",
       withCredentials: true, 
       crossDomain: true, 
+      
       headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
       
@@ -43,6 +44,25 @@ function Login(props) {
    
       //     });
     });
+  }
+
+  function log2() {
+    Axios.post(props.link, {
+      
+    username: user.username,
+    password: user.password,
+  }, {
+    withCredentials: true, crossDomain: true, headers: {"Content-Type": "application/json"} }).then((res) => {
+   
+    
+      setUser({ username: "", password: "" });
+   
+      console.log(res.data);
+      console.log("?")
+     // navigate("/secrets", {state: {isLogged:res.data}});
+ 
+    //     });
+  });
   }
 
   return (
@@ -76,7 +96,7 @@ function Login(props) {
                   />
                 </div>
 
-                <button className="btn btn-light" onClick={goHome} >
+                <button className="btn btn-light" onClick={log2} >
                   Home
                 </button>
 
