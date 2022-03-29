@@ -36,10 +36,12 @@ function Login(props) {
       .then((res) => {
          setUser({ username: "", password: "" });
         console.log(res);
-        res.json().then((data)=>{console.log(data)});
+         return res.json()
+         
+      }).then((data)=>{console.log(data)});
         console.log("?")
-    });
-  };
+    };//);
+ // };
 
   return (
     <div className=" container container-login mt-5">
