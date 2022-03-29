@@ -26,7 +26,7 @@ function Login(props) {
       method: "POST",
       withCredentials: true, 
       crossDomain: true, 
-      mode: "no-cors",
+     
       headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
       
@@ -37,8 +37,8 @@ function Login(props) {
      
       
         setUser({ username: "", password: "" });
-     
         console.log(res.data);
+        console.log(res);
         console.log("?")
        // navigate("/secrets", {state: {isLogged:res.data}});
    
