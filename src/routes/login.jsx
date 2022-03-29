@@ -27,9 +27,7 @@ function Login(props) {
       username: user.username,
       password: user.password,
     }, {
-      withCredentials: true,
-      headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'
-  }}).then((res) => {
+      withCredentials: true}).then((res) => {
      
       
         setUser({ username: "", password: "" });
