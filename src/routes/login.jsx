@@ -27,7 +27,7 @@ function Login(props) {
       username: user.username,
       password: user.password,
     }, {
-      withCredentials: true}).then((res) => {
+      withCredentials: true, crossDomain: true}).then((res) => {
      
       
         setUser({ username: "", password: "" });
