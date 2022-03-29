@@ -27,7 +27,7 @@ function Login(props) {
       withCredentials: true, 
       crossDomain: true, 
       headers: {"Content-Type": "application/json"},
-    body: SON.stringify({
+    body: JSON.stringify({
       
       username: user.username,
       password: user.password,
