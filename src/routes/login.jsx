@@ -20,6 +20,26 @@ function Login(props) {
     navigate("/") 
   }
 
+function secretsy(){
+  fetch("https://gossip-backend.vercel.app/secrets", {
+    method: "GET",
+    withCredentials: true, 
+    crossDomain: true, 
+    
+    headers: {"Content-Type": "application/json",
+    'Accept': 'application/json'},
+   })
+    .then((res) => {
+   
+    
+      setUser({ username: "", password: "" });
+   
+      res.text().then(data=> console.log(data));
+
+  });
+}
+
+
   function log() {
 
     fetch(props.link, {
@@ -106,6 +126,10 @@ function Login(props) {
            
                 <button onClick={log} type="submit" className="btn btn-dark">
                 fetch
+                  {/* {props.whatToDo} */}
+                </button>
+                <button onClick={secretsy} type="submit" className="btn btn-dark">
+                secretsy
                   {/* {props.whatToDo} */}
                 </button>
               </form>
