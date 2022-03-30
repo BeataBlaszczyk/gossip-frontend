@@ -23,6 +23,7 @@ function Login(props) {
 function secretsy(){
   fetch("https://gossip-backend.vercel.app/secrets", {
     method: "GET",
+   credentials: "include",
     withCredentials: true, 
     crossDomain: true, 
     
