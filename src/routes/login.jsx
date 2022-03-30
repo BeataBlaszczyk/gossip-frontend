@@ -38,7 +38,7 @@ function Login(props) {
       
         setUser({ username: "", password: "" });
      
-        return res.json();
+        res.json().then(data=> console.log(data));
 
         //console.log(res.data);
         //console.log("?")
@@ -61,7 +61,7 @@ function Login(props) {
    
       console.log(res.data);
       console.log("?")
-      navigate("/secrets", {state: {isLogged:res.data}});
+      //navigate("/secrets", {state: {isLogged:res.data}});
  
     //     });
   });
