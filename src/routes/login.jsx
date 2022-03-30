@@ -39,7 +39,7 @@ function Login(props) {
       
         setUser({ username: "", password: "" });
      
-        res.json().then(data=> console.log(data));
+        res.text().then(data=> console.log(data));
 
         //console.log(res.data);
         //console.log("?")
