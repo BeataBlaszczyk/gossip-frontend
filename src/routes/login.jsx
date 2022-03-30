@@ -38,6 +38,8 @@ function Login(props) {
       
         setUser({ username: "", password: "" });
      
+        return res.json();
+
         //console.log(res.data);
         //console.log("?")
        // navigate("/secrets", {state: {isLogged:res.data}});
@@ -57,9 +59,9 @@ function Login(props) {
     
       setUser({ username: "", password: "" });
    
-     // console.log(res.data);
-     // console.log("?")
-     // navigate("/secrets", {state: {isLogged:res.data}});
+      console.log(res.data);
+      console.log("?")
+      navigate("/secrets", {state: {isLogged:res.data}});
  
     //     });
   });
