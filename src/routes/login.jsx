@@ -97,12 +97,13 @@ function Login(props) {
                 </div>
 
                 <button className="btn btn-light" onClick={log2} >
-                  Home
+                  axios
                 </button>
 
            
                 <button onClick={log} type="submit" className="btn btn-dark">
-                  {props.whatToDo}
+                fetch
+                  {/* {props.whatToDo} */}
                 </button>
               </form>
             </div>
