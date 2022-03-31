@@ -16,7 +16,7 @@ let navigate = useNavigate();
     //function klik(){
        //console.log("ŁADUJE")
         Axios.post("https://gossip-backend.vercel.app/secrets",
-         {cookie: document.cookie["connect.sid"]|| ""}).then((response) => {
+         {cookie: document.cookie.split(`; connect.sid=`).pop().split(";").shift()|| ""}).then((response) => {
            console.log("RES__________>")
           console.log(response.data)
           (response.data) ? setSecrets(response.data):
