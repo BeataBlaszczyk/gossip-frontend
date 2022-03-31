@@ -15,8 +15,9 @@ let navigate = useNavigate();
   useEffect(() => {
     //function klik(){
        //console.log("ŁADUJE")
-        Axios.post("https://gossip-backend.vercel.app/secrets", {cookie: document.cookie["connect.sid"]|| ""}).then((response) => {
-           
+        Axios.post("https://gossip-backend.vercel.app/secrets",
+         {cookie: document.cookie["connect.sid"]|| ""}).then((response) => {
+           console.log("RES__________>")
           console.log(response.data)
           (response.data) ? setSecrets(response.data):
           navigate("/")
