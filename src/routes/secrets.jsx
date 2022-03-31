@@ -7,11 +7,11 @@ function Secrets(props) {
   //const myAppUrl = "http://localhost:3001";
 
   const {state} = useLocation();
-const { foundSecrets } = state || ["nie znalazłem"]; // Read values passed on state
-console.log(isLogged + "STATE")
-
+//const { foundSecrets } = state || ["nie znalazłem"]; // Read values passed on state
+//console.log(isLogged + "STATE")
+console.log("NOWY PLIK")
 let navigate = useNavigate();
-
+//tu sprawdzić czy jest ciasteczko
   useEffect(() => {
     //function klik(){
        //console.log("ŁADUJE")
