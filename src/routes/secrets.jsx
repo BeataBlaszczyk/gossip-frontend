@@ -13,17 +13,39 @@ console.log("NOWY PLIK")
 let navigate = useNavigate();
 //tu sprawdzić czy jest ciasteczko
   useEffect(() => {
+
+
+    fetch("https://gossip-backend.vercel.app/secrets", {
+      method: "GET",
+     credentials: "include",
+      withCredentials: true, 
+      crossDomain: true, 
+      
+      headers: {"Content-Type": "application/json",
+      'Accept': 'application/json'},
+     })
+      .then((res) => {
+     
+      
+     
+        res.text().then(data=> console.log(data));
+  
+    });
+
+
+
     //function klik(){
        //console.log("ŁADUJE")
-        Axios.post("https://gossip-backend.vercel.app/secrets",
-         {cookie: document.cookie.split('=').pop()|| ""}).then((response) => {
-           console.log("RES__________>")
-          console.log(response.data)
-          (response.data) ? setSecrets(response.data):
-          navigate("/")
-           
+      /////////////////////////////
+        // Axios.post("https://gossip-backend.vercel.app/secrets",
+        //  {cookie: document.cookie.split('=').pop()|| ""}).then((response) => {
+        //    console.log("RES__________>")
+        //   console.log(response.data)
+        //   (response.data) ? setSecrets(response.data):
+        //   navigate("/")
+         //////////////////////////////////////  
 
-          })
+        //   })
        
       
      },[])
