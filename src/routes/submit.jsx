@@ -17,6 +17,7 @@ function Submit(props){
             
         }).then((res)=>{
             setSecret("");
+
             navigate("/secrets");
         })
 

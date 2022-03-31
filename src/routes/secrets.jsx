@@ -4,12 +4,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 function Secrets(props) {
   const [secrets, setSecrets] = useState([]);
-  const myAppUrl = "http://localhost:3001";
+  //const myAppUrl = "http://localhost:3001";
 
   const {state} = useLocation();
-const { isLogged } = state || false; // Read values passed on state
+const { foundSecrets } = state || ["nie znalazłem"]; // Read values passed on state
 console.log(isLogged + "STATE")
-const axios = require('axios');
+
 let navigate = useNavigate();
 
   useEffect(() => {
