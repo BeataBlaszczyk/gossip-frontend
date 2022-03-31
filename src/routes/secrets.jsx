@@ -17,7 +17,7 @@ let navigate = useNavigate();
 
     fetch("https://gossip-backend.vercel.app/secrets", {
       method: "GET",
-     //credentials: "include",
+     credentials: "include",
       withCredentials: true, 
       crossDomain: true, 
       
