@@ -62,11 +62,11 @@ function secretsy(){
       
         setUser({ username: "", password: "" });
      
-        res.text().then(data=> console.log(data));
+        //res.text().then(data=> console.log(data));
 
         //console.log(res.data);
         //console.log("?")
-       // navigate("/secrets", {state: {isLogged:res.data}});
+       navigate("/secrets");
    
       //     });
     });
@@ -84,8 +84,8 @@ function secretsy(){
       setUser({ username: "", password: "" });
    
       console.log(res.data);
-      console.log("?")
-      //navigate("/secrets", {state: {isLogged:res.data}});
+      //console.log("?")
+      navigate("/secrets");
  
     //     });
   });
