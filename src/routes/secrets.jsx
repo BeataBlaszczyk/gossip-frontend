@@ -27,8 +27,10 @@ let navigate = useNavigate();
       .then((res) => {
      
         
-     
-        res.text().then(data=> setSecrets(data));
+        
+        res.text().then(data=> {
+          console.log(data)
+          setSecrets(data)});
   
     });
 
