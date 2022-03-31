@@ -56,12 +56,17 @@ function secretsy(){
       
       username: user.username,
       password: user.password,
-    }),  })
+    })  })
       .then((res) => {
      
-      
+      if(res.ok) {
         setUser({ username: "", password: "" });
-     
+        return res.json();
+      }
+
+      res.json().then(data => {throw new Error(data)});
+      
+
         //res.text().then(data=> console.log(data));
 
         //console.log(res.data);
@@ -74,8 +79,7 @@ function secretsy(){
 
   function log2() {
     Axios.post(props.link, {
-      
-    username: user.username,
+          username: user.username,
     password: user.password,
   }, {
     withCredentials: true, crossDomain: true, headers: {"Content-Type": "application/json"} }).then((res) => {
