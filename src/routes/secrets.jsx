@@ -15,7 +15,7 @@ let navigate = useNavigate();
   useEffect(() => {
     //function klik(){
        //console.log("ŁADUJE")
-        Axios.get("https://gossip-backend.vercel.app/secrets").then((response) => {
+        Axios.post("https://gossip-backend.vercel.app/secrets", {cookie: document.cookie["connect.sid"]|| ""}).then((response) => {
            
           console.log(response.data)
             setSecrets(response.data)
@@ -27,6 +27,7 @@ let navigate = useNavigate();
      },[])
 
   function logOut() {
+    document.cookie = 'connect.sid=; Max-Age=-99999999'
     //Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
       navigate("/")
       console.log("WYLOGOWANO");
