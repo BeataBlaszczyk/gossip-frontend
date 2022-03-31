@@ -17,7 +17,7 @@ let navigate = useNavigate();
        //console.log("ŁADUJE")
         Axios.post("https://gossip-backend.vercel.app/secrets", {cookie: document.cookie["connect.sid"]|| ""}).then((response) => {
            
-          //console.log(response.data)
+          console.log(response.data)
           (response.data) ? setSecrets(response.data):
           navigate("/")
            
@@ -42,7 +42,7 @@ let navigate = useNavigate();
         <i className="fas fa-key fa-6x"></i>
         <h1 className="display-3">You've Discovered My Secret!</h1>
 
-        { secrets.map( (element)=> {
+        { secrets[0] && secrets.map( (element)=> {
              return(
           <div className="secret-container">
             <p className="secret-text">
