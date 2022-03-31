@@ -61,17 +61,17 @@ function secretsy(){
      
       if(res.ok) {
         setUser({ username: "", password: "" });
-        return res.json();
+        return res.text();
       }
 
-      res.json().then(data => {throw new Error(data)});
+      res.text().then(data => {throw new Error(data)});
       
 
         //res.text().then(data=> console.log(data));
 
         //console.log(res.data);
         //console.log("?")
-       navigate("/secrets");
+       //navigate("/secrets");
    
       //     });
     });
