@@ -28,7 +28,7 @@ let navigate = useNavigate();
 
   function logOut() {
     Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
-      navigate("/", {state: {isLogged:false}})
+      navigate("/")
       console.log("WYLOGOWANO");
       //
     });
