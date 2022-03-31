@@ -58,8 +58,8 @@ function secretsy(){
       password: user.password,
     })  }).then( 
       //setUser({ username: "", password: "" })
-      navigate("/secrets")
-
+      //navigate("/secrets")
+      console.log(res.text())
     ).catch(err => {
 
       console.log("WRONG")
