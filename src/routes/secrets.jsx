@@ -27,11 +27,11 @@ let navigate = useNavigate();
      },[])
 
   function logOut() {
-    Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
+    //Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
       navigate("/")
       console.log("WYLOGOWANO");
       //
-    });
+    //});
   }
 
   return (
