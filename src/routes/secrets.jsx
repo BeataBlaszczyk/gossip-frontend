@@ -17,14 +17,14 @@ let navigate = useNavigate();
        //console.log("ŁADUJE")
         Axios.get("https://gossip-backend.vercel.app/secrets", {   crossDomain: true, auth: isLogged}).then((response) => {
            
-          //console.log("TYY")
+          console.log(response.data)
             setSecrets(response.data)
            
 
           })
        
       
-     },[])
+     },[secrets])
 
   function logOut() {
     Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
