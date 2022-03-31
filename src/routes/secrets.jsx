@@ -15,7 +15,7 @@ let navigate = useNavigate();
   useEffect(() => {
     //function klik(){
        //console.log("ŁADUJE")
-        Axios.get("https://gossip-backend.vercel.app/secrets", {   crossDomain: true, auth: isLogged}).then((response) => {
+        Axios.get("https://gossip-backend.vercel.app/secrets").then((response) => {
            
           console.log(response.data)
             setSecrets(response.data)
