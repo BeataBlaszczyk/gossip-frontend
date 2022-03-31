@@ -82,8 +82,8 @@ function secretsy(){
           username: user.username,
     password: user.password,
   }, {
-    //withCredentials: true, 
-    //crossDomain: true, 
+    withCredentials: true, 
+    crossDomain: true, 
     headers: {"Content-Type": "application/json"} }).then((res) => {
    
     
