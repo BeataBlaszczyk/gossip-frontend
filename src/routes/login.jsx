@@ -84,10 +84,10 @@ function secretsy(){
       setUser({ username: "", password: "" });
    
       console.log(res.data);
-      console.log("tuz przed navigate")
+      //console.log("tuz przed navigate")
       //console.log("?")
-      navigate("/secrets");
-      console.log("tuz po navigate")
+      //--->navigate("/secrets");
+      //console.log("tuz po navigate")
     //     });
   });
   }
