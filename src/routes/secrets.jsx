@@ -17,7 +17,7 @@ let navigate = useNavigate();
        //console.log("ŁADUJE")
         Axios.post("https://gossip-backend.vercel.app/secrets", {cookie: document.cookie["connect.sid"]|| ""}).then((response) => {
            
-          console.log(response.data)
+          //console.log(response.data)
           (response.data) ? setSecrets(response.data):
           navigate("/")
            
