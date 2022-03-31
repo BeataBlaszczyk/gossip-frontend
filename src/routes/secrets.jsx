@@ -24,7 +24,7 @@ let navigate = useNavigate();
           })
        
       
-     },[secrets])
+     },[])
 
   function logOut() {
     Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
