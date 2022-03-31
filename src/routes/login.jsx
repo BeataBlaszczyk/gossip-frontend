@@ -45,7 +45,7 @@ function secretsy(){
 
   function log() {
 
-    fetch(props.link, {
+     try{fetch(props.link, {
       method: "POST",
       withCredentials: true, 
       crossDomain: true, 
@@ -56,17 +56,15 @@ function secretsy(){
       
       username: user.username,
       password: user.password,
-    })  })
-      .then((res) => {
-     
-      if(res.ok) {
-        setUser({ username: "", password: "" });
-        return res.text();
-      }
+    })  }).then( 
+      //setUser({ username: "", password: "" })
+      navigate("/secrets")
 
-      res.text().then(data => {throw new Error(data)});
+    )}catch{
+
+      res.text().then(data => {throw new Error(data)})
+    }
       
-
         //res.text().then(data=> console.log(data));
 
         //console.log(res.data);
@@ -74,10 +72,11 @@ function secretsy(){
        //navigate("/secrets");
    
       //     });
-    });
+    };
   }
 
   function log2() {
+    try{
     Axios.post(props.link, {
           username: user.username,
     password: user.password,
@@ -93,8 +92,10 @@ function secretsy(){
       //--->navigate("/secrets");
       //console.log("tuz po navigate")
     //     });
-  });
-  }
+  })}catch{
+    (res) => {throw new Error(res.data)}
+  
+  }}
 
   return (
     <div className=" container container-login mt-5">
