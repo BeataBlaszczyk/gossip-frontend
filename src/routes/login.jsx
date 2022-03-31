@@ -56,10 +56,10 @@ function secretsy(){
       
       username: user.username,
       password: user.password,
-    })  }).then( 
+    })  }).then( res=> {
       //setUser({ username: "", password: "" })
       //navigate("/secrets")
-      console.log(res.text())
+      console.log(res.text())}
     ).catch(err => {
 
       console.log("WRONG")
