@@ -61,9 +61,10 @@ function secretsy(){
       //setUser({ username: "", password: "" })
       navigate("/secrets")
 
-    )}catch{
+    )}catch(err){
 
-      res.text().then(data => {throw new Error(data)})
+      console.log("WRONG")
+      console.log(err)
     }
       
         //res.text().then(data=> console.log(data));
@@ -93,9 +94,9 @@ function secretsy(){
       //--->navigate("/secrets");
       //console.log("tuz po navigate")
     //     });
-  })}catch{
-    (res) => {throw new Error(res.data)}
-  
+  })}catch(err){
+  console.log("WRONG LOGIN")
+  console.log(err)
   }}
 
   return (
