@@ -15,7 +15,7 @@ let navigate = useNavigate();
   useEffect(() => {
     //function klik(){
        //console.log("ŁADUJE")
-        Axios.post("http://localhost:3001/secrets",
+        Axios.post("https://gossip-backend.vercel.app/secrets",
          {cookie: document.cookie.split('=').pop()|| ""}).then((response) => {
            console.log("RES__________>")
           console.log(response.data)
