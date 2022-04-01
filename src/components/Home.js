@@ -1,7 +1,35 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
+
+  let navigate = useNavigate()
+  useEffect(() => {
+
+  
+
+    fetch("https://gossip-backend.vercel.app/secrets", {
+      method: "GET",
+     credentials: "include",
+      withCredentials: true, 
+      crossDomain: true, 
+      
+      headers: {"Content-Type": "application/json",
+      'Accept': 'application/json'},
+     })
+      .then((res) => {
+     
+        res.text().then(data=> {
+          
+          console.log(data)
+          if ((data)==="unauthorized") {
+            navigate("/");
+         
+        }else{
+          setSecrets(JSON.parse(data))
+        }})
+  
+    });
 
   
 
