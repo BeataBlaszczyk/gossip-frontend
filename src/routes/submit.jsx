@@ -33,6 +33,7 @@ function Submit(props){
         }})
   
     });
+});
 
     function sumbitSecret(){
 
