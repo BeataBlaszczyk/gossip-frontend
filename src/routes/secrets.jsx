@@ -29,10 +29,11 @@ let navigate = useNavigate();
         res.text().then(data=> {
           
           console.log(data)
-          if (JSON.parse(data)!=="unauthorized") {
-          setSecrets(JSON.parse(data))
+          if ((data)==="unauthorized") {
+            navigate("/");
+         
         }else{
-          navigate("/");
+          setSecrets(JSON.parse(data))
         }})
   
     });
