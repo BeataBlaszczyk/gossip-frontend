@@ -38,7 +38,7 @@ function Login(props) {
             navigate("/");
          
         }else{
-          setSecrets(JSON.parse(data))
+          navigate("/secrets");
         }})
   
     });
