@@ -89,6 +89,7 @@ function secretsy(){
     
       setUser({ username: "", password: "" });
    const expireD = (new Date(Date. now()+ 86400*1000)). toUTCString()
+   console.log("TEST")
       console.log(encodeURIComponent(res.data));
       document.cookie="connect.sid="+res.data+"; expires="+expireD;
       console.log("tuz przed navigate")
