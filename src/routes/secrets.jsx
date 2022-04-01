@@ -26,12 +26,14 @@ let navigate = useNavigate();
      })
       .then((res) => {
      
-        
-        
         res.text().then(data=> {
           
           console.log(data)
-          setSecrets(JSON.parse(data))});
+          if (JSON.parse(data)==="unauthorized") {
+          setSecrets(JSON.parse(data))
+        }else{
+          navigate("/");
+        }})
   
     });
 
@@ -55,11 +57,14 @@ let navigate = useNavigate();
 
   function logOut() {
     document.cookie = 'connect.sid=; Max-Age=-99999999'
-    //Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
-      navigate("/")
+    Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
+      
+      document.cookie="connect.sid=logout; max-age=0";
+ 
       console.log("WYLOGOWANO");
+      navigate("/");
       //
-    //});
+    });
   }
 
   return (

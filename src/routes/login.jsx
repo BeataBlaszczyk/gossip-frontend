@@ -91,14 +91,16 @@ function secretsy(){
    const expireD = (new Date(Date. now()+ 86400*1000)). toUTCString()
       console.log(encodeURIComponent(res.data));
       document.cookie="connect.sid="+res.data+"; expires="+expireD;
+      navigate("/secrets")
       //console.log("tuz przed navigate")
       //console.log("?")
       //--->navigate("/secrets");
       //console.log("tuz po navigate")
     //     });
   }).catch(err=>{
-  console.log("WRONG LOGIN")
+  console.log("WRONG LOGIN/REGISTER")
   console.log(err)
+  navigate("/login")
   })}
 
   return (

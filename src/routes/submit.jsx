@@ -10,6 +10,30 @@ function Submit(props){
     let navigate = useNavigate();
   const  [secret, setSecret] = useState("");
 
+
+  useEffect(() => {
+
+
+    fetch("https://gossip-backend.vercel.app/submit", {
+      method: "GET",
+     credentials: "include",
+      withCredentials: true, 
+      crossDomain: true, 
+      
+      headers: {"Content-Type": "application/json",
+      'Accept': 'application/json'},
+     })
+      .then((res) => {
+     
+        res.text().then(data=> {
+          
+          console.log(data)
+          if (JSON.parse(data)==="unauthorized") {
+            navigate("/");
+        }})
+  
+    });
+
     function sumbitSecret(){
 
         axios.post(props.link, {
