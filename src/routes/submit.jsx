@@ -28,12 +28,12 @@ function Submit(props){
         res.text().then(data=> {
           
           console.log(data)
-          if (JSON.parse(data)==="unauthorized") {
+          if ((data)==="unauthorized") {
             navigate("/");
         }})
   
     });
-});
+}, []);
 
     function sumbitSecret(){
 
