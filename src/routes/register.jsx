@@ -35,7 +35,7 @@ function Register(props) {
           
           console.log(data)
           if ((data)==="unauthorized") {
-            navigate("/login");
+            navigate("/register");
          
         }else{
           navigate("/secrets");
