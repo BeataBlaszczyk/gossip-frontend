@@ -9,7 +9,7 @@ function Secrets(props) {
   const { state } = useLocation();
   //const { foundSecrets } = state || ["nie znalazłem"]; // Read values passed on state
   //console.log(isLogged + "STATE")
-  console.log("NOWY PLIK");
+ 
   let navigate = useNavigate();
   //tu sprawdzić czy jest ciasteczko
   useEffect(() => {
@@ -25,7 +25,7 @@ function Secrets(props) {
       },
     }).then((res) => {
       res.text().then((data) => {
-        console.log(data);
+        
         if (data === "unauthorized") {
           navigate("/");
         } else {
@@ -60,23 +60,21 @@ function Secrets(props) {
      })
       .then((res) => {
      
-      
-     
         res.text().then(data=> console.log(data));
         navigate("/")
     });
-
-
-    document.cookie = "connect.sid=; Max-Age=-99999999";
-    Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
-      document.cookie = "connect.sid=logout; max-age=0";
-      console.log(response);
-      console.log("WYLOGOWANO");
-      //window.location.href = 'https://gossip-frontend.vercel.app'
-      navigate("/");
-      //
-    });
   }
+
+    // document.cookie = "connect.sid=; Max-Age=-99999999";
+    // Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
+    //   document.cookie = "connect.sid=logout; max-age=0";
+    //   console.log(response);
+    //   console.log("WYLOGOWANO");
+    //   //window.location.href = 'https://gossip-frontend.vercel.app'
+    //   navigate("/");
+      //
+  //   });
+  // }
 
   return (
     <div className="jumbotron text-center">
