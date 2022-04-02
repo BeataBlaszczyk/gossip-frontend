@@ -63,7 +63,7 @@ let navigate = useNavigate();
       document.cookie="connect.sid=logout; max-age=0";
     console.log(response)
       console.log("WYLOGOWANO");
-      window.location.href = 'https://gossip-frontend.vercel.app'
+      //window.location.href = 'https://gossip-frontend.vercel.app'
       //navigate("/");
       //
     });
