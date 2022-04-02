@@ -1,5 +1,4 @@
 import Axios from "axios";
-
 import React, { useState, useEffect } from "react";
 import { useNavigate, Route, BrowserRouter, Routes } from "react-router-dom";
 import Secrets from "./secrets";
@@ -135,28 +134,10 @@ function secretsy(){
   navigate("/login")
   })}
 
-
-  function authorization(via){
-
-    Axios.get(via, {
-     }, {
-      withCredentials: true, 
-      crossDomain: true, 
-      headers: {"Content-Type": "application/json"} }).then( res => {
-          if (res==="ok"){ navigate("/secrets")}
-          console.log(res)
-      }
-        
-      )
-}
-
-
-
-
   return (
     <div className=" container container-login mt-5">
       
-      {/* {isLogged ? <Redirect to="/secrets" /> :  null } */}
+      {/* {isLogged ? <Redirect to="/secrets" /> : null } */}
       <h1>{props.whatToDo}</h1>
       <div className="row">
         <div className="col-sm-8">
@@ -207,8 +188,7 @@ function secretsy(){
             <div className="card-body">
               <a
                 className="btn btn-block btn-google"
-               onClick={()=> authorization("https://gossip-backend.vercel.app/auth/google")}
-                //href="https://gossip-backend.vercel.app/auth/google"
+                href="https://gossip-backend.vercel.app/auth/google"
                 role="button"
               >
                 <i className="fab fa-google"></i>
@@ -216,9 +196,7 @@ function secretsy(){
               </a>
               <a
                 className="btn btn-block btn-facebook"
-                onClick={()=> authorization("https://gossip-backend.vercel.app/auth/facebook")}
-              
-                //href="https://gossip-backend.vercel.app/auth/facebook"
+                href="https://gossip-backend.vercel.app/auth/facebook"
                 role="button"
               >
                 <i className="fab fa-facebook"></i>
