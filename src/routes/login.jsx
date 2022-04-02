@@ -42,7 +42,7 @@ function Login(props) {
         }})
   
     });
-  });
+  },[]);
 
 
   function goHome(){
