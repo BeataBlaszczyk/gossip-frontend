@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { append } from "express/lib/response";
+
 import React, { useState, useEffect } from "react";
 import { useNavigate, Route, BrowserRouter, Routes } from "react-router-dom";
 import Secrets from "./secrets";
@@ -143,8 +143,8 @@ function secretsy(){
       withCredentials: true, 
       crossDomain: true, 
       headers: {"Content-Type": "application/json"} }).then( res => {
-          if (res===ok){ navigate("/secrets")}
-          console.log(response)
+          if (res==="ok"){ navigate("/secrets")}
+          console.log(res)
       }
         
       )
