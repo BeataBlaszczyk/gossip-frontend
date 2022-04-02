@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { render } from "react-dom";
 import { BrowserRouter, Routes,  Route } from "react-router-dom";
 import Login from "./routes/login";
+import Register from "./routes/register";
 import Secrets from "./routes/secrets";
 import Submit from "./routes/submit"
 
@@ -16,7 +17,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="login" element={<Login whatToDo="Login"   link="https://gossip-backend.vercel.app/login"/>} />
-      <Route path="register" element={<Login whatToDo="Register"  link="https://gossip-backend.vercel.app/register"/>} />
+      <Route path="register" element={<Register whatToDo="Register"  link="https://gossip-backend.vercel.app/register"/>} />
       <Route path="secrets" element={<Secrets isLogged={true} />} />
       <Route path="submit" element={<Submit  link="https://gossip-backend.vercel.app/submit"/>} />
     </Routes>
