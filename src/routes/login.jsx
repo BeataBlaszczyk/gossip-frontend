@@ -142,7 +142,12 @@ function secretsy(){
      }, {
       withCredentials: true, 
       crossDomain: true, 
-      headers: {"Content-Type": "application/json"} })
+      headers: {"Content-Type": "application/json"} }).then( res => {
+          if (res===ok){ navigate("/secrets")}
+          console.log(response)
+      }
+        
+      )
 }
 
 
