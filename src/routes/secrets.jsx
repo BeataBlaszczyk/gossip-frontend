@@ -74,7 +74,7 @@ function logOut2(){
     'Accept': 'application/json'},
    })
     .then((res) => {
-      navigate("/login");
+      navigate("/");
     
 
   });
@@ -101,12 +101,12 @@ function logOut2(){
           </div>)
         })}
         <hr />
-        <a className="btn btn-light btn-lg" onClick={logOut} role="button">
-          Log Out
-        </a>
+        {/* <a className="btn btn-light btn-lg" onClick={logOut} role="button">
+          Log Out axios 
+        </a> */}
 
         <a className="btn btn-light btn-lg" onClick={logOut2} role="button">
-          Log Out 2
+          Log Out
         </a>
         <a className="btn btn-dark btn-lg" href="/submit" role="button">
           Submit a Secret
