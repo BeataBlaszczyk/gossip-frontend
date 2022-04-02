@@ -188,7 +188,7 @@ function secretsy(){
             <div className="card-body">
               <a
                 className="btn btn-block btn-google"
-                href="/auth/google"
+                href="https://gossip-backend.vercel.app/auth/google/auth/google"
                 role="button"
               >
                 <i className="fab fa-google"></i>
@@ -196,7 +196,7 @@ function secretsy(){
               </a>
               <a
                 className="btn btn-block btn-facebook"
-                href="/auth/facebook"
+                href="https://gossip-backend.vercel.app/auth/google/auth/facebook"
                 role="button"
               >
                 <i className="fab fa-facebook"></i>
