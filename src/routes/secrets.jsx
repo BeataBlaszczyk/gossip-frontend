@@ -61,8 +61,9 @@ let navigate = useNavigate();
     Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
       
       document.cookie="connect.sid=logout; max-age=0";
- 
+    console.log(response)
       console.log("WYLOGOWANO");
+      window.location.href = 'https://gossip-frontend.vercel.app'
       navigate("/");
       //
     });
