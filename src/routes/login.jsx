@@ -156,7 +156,7 @@ function secretsy(){
   return (
     <div className=" container container-login mt-5">
       
-      {/* {isLogged ? <Redirect to="/secrets" /> : null } */}
+      {/* {isLogged ? <Redirect to="/secrets" /> :  null } */}
       <h1>{props.whatToDo}</h1>
       <div className="row">
         <div className="col-sm-8">
