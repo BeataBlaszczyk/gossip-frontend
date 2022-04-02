@@ -64,7 +64,7 @@ let navigate = useNavigate();
     console.log(response)
       console.log("WYLOGOWANO");
       window.location.href = 'https://gossip-frontend.vercel.app'
-      navigate("/");
+      //navigate("/");
       //
     });
   }
