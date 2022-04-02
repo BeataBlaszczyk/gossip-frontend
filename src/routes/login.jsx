@@ -35,7 +35,7 @@ function Login(props) {
           
           console.log(data)
           if ((data)==="unauthorized") {
-            navigate("/");
+            navigate("/login");
          
         }else{
           navigate("/secrets");
