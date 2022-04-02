@@ -29,11 +29,11 @@ function LogIn(props){
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <a class="btn btn-block btn-google" href="/auth/google" role="button">
+                <a class="btn btn-block btn-google" href="https://gossip-backend.vercel.app/auth/google//auth/google" role="button">
                   <i class="fab fa-google"></i>
                   Sign In with Google
                 </a>
-                <a class="btn btn-block btn-facebook" href="/auth/facebook" role="button">
+                <a class="btn btn-block btn-facebook" href="https://gossip-backend.vercel.app//auth/facebook" role="button">
                   <i class="fab fa-facebook"></i>
                   Sign Up with Facebook
                 </a>
