@@ -1,10 +1,17 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import io from "socket.io-client";
+import ChatWindow from "../components/ChatWindow"
+import Chat from "../components/Chat"
+const socket = io.connect("http://localhost:3001");
+
 function Secrets(props) {
-  const [secrets, setSecrets] = useState([]);
+  const [secrets, setSecrets] = useState([{content: "lllll", rating: 8}]);
   //const myAppUrl = "http://localhost:3001";
   const {state} = useLocation();
+  const [shownChats, setShownChats] = useState([]);
+
 //const { foundSecrets } = state || ["nie znalazłem"]; // Read values passed on state
 //console.log(isLogged + "STATE")
 console.log("NOWY PLIK")
@@ -26,7 +33,7 @@ let navigate = useNavigate();
           
           console.log(data)
           if ((data)==="unauthorized") {
-            navigate("/");
+            //navigate("/");
          
         }else{
           setSecrets(JSON.parse(data))
@@ -81,13 +88,16 @@ function logOut2(){
 }
 
   return (
-    <div className="jumbotron text-center">
+    <div className="main-page-secrets">
+
+   
+    <div className="jumbotron text-center main-secrets">
       <div className="container">
         <i className="fas fa-key fa-6x"></i>
         <h1 className="display-3">You've Discovered My Secret!</h1>
-        { secrets[0] && secrets.map( (element)=> {
+        { secrets[0] && secrets.map( (element, index)=> {
              return(
-          <div className="secret-container">
+          <div key={index} className="secret-container">
             <p className="secret-text">
               <span className="fire">
                 <div className="myGrid">
@@ -95,6 +105,7 @@ function logOut2(){
                   <img className="thumbUp" />
                   <img className="thumbDown" />
                 </div>
+                
               </span>
               <span className="secret-text">{element.content}</span>
             </p>
@@ -111,8 +122,20 @@ function logOut2(){
         <a className="btn btn-dark btn-lg" href="/submit" role="button">
           Submit a Secret
         </a>
+
+        
+
         {/* <button onClick={klik} > SEKRETY DEJ MNIE! </button> */}
       </div>
+        <div id="chat-window-container">
+        {shownChats.map((el)=> <ChatWindow socket={socket} roomName={el.roomName} room={el.indx} username={el.author}/> ) }
+        </div>
+      
+    </div>
+    <Chat socket={socket} shownChats={shownChats} setShownChats={setShownChats} />
+
+
+
     </div>
   );
 }
