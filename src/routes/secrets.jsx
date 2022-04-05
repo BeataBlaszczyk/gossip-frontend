@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import io from "socket.io-client";
 import ChatWindow from "../components/ChatWindow";
 import Chat from "../components/Chat";
-const socket = io.connect("https://gossip-backend.vercel.app");
+const socket = io.connect("https://gossip-socket.vercel.app");
 
 function Secrets(props) {
   const [secrets, setSecrets] = useState([]);
