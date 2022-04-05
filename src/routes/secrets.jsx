@@ -11,7 +11,7 @@ function Secrets(props) {
   //const myAppUrl = "http://localhost:3001";
   const { state } = useLocation();
   const [shownChats, setShownChats] = useState([]);
-
+  const [roomList, setRoomList] = useState([]);
   //const { foundSecrets } = state || ["nie znalazłem"]; // Read values passed on state
   //console.log(isLogged + "STATE")
   console.log("NOWY PLIK");
@@ -72,7 +72,7 @@ function Secrets(props) {
     //   })
   }, []);
 
-  
+
   function logOut() {
     document.cookie = "connect.sid=; Max-Age=-99999999";
     Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
@@ -164,6 +164,8 @@ function Secrets(props) {
         socket={socket}
         shownChats={shownChats}
         setShownChats={setShownChats}
+        roomList={roomList}
+        setRoomList={setRoomList}
       />
     </div>
   );

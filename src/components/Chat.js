@@ -4,7 +4,7 @@ import ScrollToBottom from "react-scroll-to-bottom";
 import axios from "axios";
 
 
-function Chat({ socket, shownChats, setShownChats }) {
+function Chat({ socket, shownChats, setShownChats, setRoomList, roomList }) {
   useEffect(() => {
     // axios
     //   .get("https://gossip-backend.vercel.app/getrooms")
@@ -33,7 +33,7 @@ function Chat({ socket, shownChats, setShownChats }) {
     },
   ];
   
-  const [roomList, setRoomList] = useState(rooms);
+
   const [isExpanded, setIsExpanded] = useState(false);
   const [username, setUsername] = useState("");
   const [newRoom, setNewRoom] = useState({
