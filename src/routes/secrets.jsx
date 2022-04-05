@@ -79,6 +79,14 @@ function Secrets(props) {
     });
   }
 
+  function ratingUp(){
+    console.log("up")
+  }
+
+  function ratingDown(){
+    console.log("down")
+  }
+
   return (
     <div className="main-page-secrets">
       <div className="jumbotron text-center main-secrets">
