@@ -7,7 +7,7 @@ import axios from "axios";
 function Chat({ socket, shownChats, setShownChats }) {
   useEffect(() => {
     axios
-      .get("http://localhost:3001/getrooms")
+      .get("https://gossip-backend.vercel.app/getrooms")
       .then((res) => setRoomList(res.data));
 
     socket.on("new_room", (data) => {});
@@ -56,7 +56,7 @@ function Chat({ socket, shownChats, setShownChats }) {
     // if (newRoom.roomName !== "") {
     //setRoomList((prev) => [...prev, newRoom]);
 
-    axios.post("http://localhost:3001/rooms", newRoom).then((res) => {
+    axios.post("https://gossip-backend.vercel.app/rooms", newRoom).then((res) => {
       setNewRoom({
         roomName: "",
         roomDescription: "",

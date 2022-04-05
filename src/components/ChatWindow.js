@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 
-function ChatWindow({ socket, username, room, roomName }) {
+function ChatWindow({ socket, username, room, roomName, shownChats, setShownChats }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+  const [isMinimalized, setIsMinimalized] = useState(false);
+
+
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -30,17 +33,34 @@ function ChatWindow({ socket, username, room, roomName }) {
     }
   };
 
+  function minimalize(){
+      setIsMinimalized(true)
+  }
+  function closeChat(){
+    const isExecuted = window.confirm("Are you sure to leave this room? After leaving room your chat history won't be available.")
+    if (isExecuted) {
+    socket.emit("leave_room", room);
+    setShownChats((prev) => prev.filter((el) => el.indx !== room))
+    console.log(shownChats)
+    }
+  }
+
   useEffect(() => {
     socket.on("receive_message", (data) => {
+      if (data.room === room ){
       setMessageList((prev) => [...prev, data]);
-    });
+    }});
   }, [socket]);
 
   return (
-    <div className="chat-window">
+    <div className={isMinimalized ? "non-visible-chat-heigh chat-window" :"chat-window"}>
       <div className="chat-header">
-        <p> Live Chat - {roomName}</p>
+        <p onClick={()=>setIsMinimalized(false)}> Live Chat - {roomName}</p>
+        <button onClick={minimalize}> - </button>
+        <button onClick={closeChat}> x </button>
       </div>
+
+      {!isMinimalized && (
       <div className="chat-body">
       <ScrollToBottom className="message-container">
         {messageList.map((msg, indx) => {
@@ -60,7 +80,8 @@ function ChatWindow({ socket, username, room, roomName }) {
           );
         })}
         </ScrollToBottom>
-      </div>
+      </div> )}
+      {!isMinimalized && (
       <div className="chat-footer">
         <input
           type="text"
@@ -70,7 +91,7 @@ function ChatWindow({ socket, username, room, roomName }) {
           onKeyPress={handleKeypress}
         />
         <button onClick={sendMessage}>&#9658;</button>
-      </div>
+      </div> )}
     </div>
   );
 }

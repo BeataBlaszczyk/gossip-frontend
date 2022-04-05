@@ -247,6 +247,8 @@ float: right;
   margin: 0;
 }
 .chat-window .chat-header {
+  display: flex;
+  align-items: flex-start;
   height: 45px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
@@ -255,6 +257,7 @@ float: right;
   cursor: pointer;
 }
 .chat-window .chat-header p {
+  flex-grow: 3;
   display: block;
   padding: 0 1em 0 2em;
   color: #fff;
@@ -262,6 +265,13 @@ float: right;
   line-height: 45px;
 }
 
+.chat-window .chat-header button{
+  background-color: transparent;
+  color: white;
+  border:none;
+  font-weight:600;
+  font-size: 1.3rem;;
+}
 .chat-window .chat-body {
   height: calc(450px - (45px + 70px));
   border: 1px solid #263238;
@@ -404,4 +414,12 @@ float: right;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+.non-visible-chat-heigh{
+  height: 45px !important;
+}
+
+button:focus{
+ outline: none;
 }
