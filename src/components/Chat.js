@@ -21,7 +21,15 @@ function Chat({ socket, shownChats, setShownChats }) {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-      }).then((res) => setRoomList(res.data));
+      }).then((res) => {
+      res.text().then((data) => {
+        console.log(data);
+        
+          
+          setRoomList(JSON.parse(data))});
+        
+      });
+      
 
       socket.on("new_room", (data) => {console.log("sockety")});
 
