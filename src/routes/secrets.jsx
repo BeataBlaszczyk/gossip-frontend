@@ -93,8 +93,8 @@ function Secrets(props) {
                     <span className="fire">
                       <div className="myGrid">
                         🔥 <span class="rating">{element.rating}</span>
-                        <img className="thumbUp" />
-                        <img className="thumbDown" />
+                        <img className="thumbUp" onClick={ratingUp} />
+                        <img className="thumbDown" onClick={ratingDown} />
                       </div>
                     </span>
                     <span className="secret-text">{element.content}</span>

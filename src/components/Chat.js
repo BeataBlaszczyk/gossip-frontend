@@ -6,11 +6,25 @@ import axios from "axios";
 
 function Chat({ socket, shownChats, setShownChats }) {
   useEffect(() => {
-    axios
-      .get("https://gossip-backend.vercel.app/getrooms")
-      .then((res) => setRoomList(res.data));
+    // axios
+    //   .get("https://gossip-backend.vercel.app/getrooms")
+    //   .then((res) => setRoomList(res.data));
 
-    socket.on("new_room", (data) => {console.log("sockety")});
+    
+    fetch("https://gossip-backend.vercel.app/getrooms", {
+        method: "GET",
+        credentials: "include",
+        withCredentials: true,
+        crossDomain: true,
+  
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }).then((res) => setRoomList(res.data));
+
+      socket.on("new_room", (data) => {console.log("sockety")});
+
   });
 
   const rooms = [
