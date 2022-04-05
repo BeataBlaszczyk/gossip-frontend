@@ -10,7 +10,7 @@ function Chat({ socket, shownChats, setShownChats }) {
       .get("https://gossip-backend.vercel.app/getrooms")
       .then((res) => setRoomList(res.data));
 
-    socket.on("new_room", (data) => {});
+    socket.on("new_room", (data) => {console.log("sockety")});
   });
 
   const rooms = [
