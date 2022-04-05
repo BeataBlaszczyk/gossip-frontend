@@ -11,29 +11,19 @@ function Chat({ socket, shownChats, setShownChats }) {
     //   .then((res) => setRoomList(res.data));
 
     
-    fetch("https://gossip-backend.vercel.app/getrooms", {
-        method: "GET",
-        credentials: "include",
-        withCredentials: true,
-        crossDomain: true,
-  
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      }).then((res) => {
-      res.text().then((data) => {
-        console.log(data);
-        
-          
-          setRoomList(JSON.parse(data))});
-        
-      });
+   
       
 
-      socket.on("new_room", (data) => {console.log("room added")});
+      socket.on("new_room", (data) => { 
+               
+          
+          setRoomList((prev)=> {[...prev, data ]})
+        
+      
+  },[socket]);
 
-  });
+
+
 
   const rooms = [
     {

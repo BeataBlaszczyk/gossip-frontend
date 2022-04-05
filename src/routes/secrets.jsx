@@ -38,6 +38,27 @@ function Secrets(props) {
         }
       });
     });
+
+
+    fetch("https://gossip-backend.vercel.app/getrooms", {
+        method: "GET",
+        credentials: "include",
+        withCredentials: true,
+        crossDomain: true,
+  
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }).then((res) => {
+      res.text().then((data) => {
+        console.log(data);
+        
+          
+          setRoomList(JSON.parse(data))});
+        
+      })
+
     //function klik(){
     //console.log("ŁADUJE")
     /////////////////////////////
@@ -50,6 +71,8 @@ function Secrets(props) {
     //////////////////////////////////////
     //   })
   }, []);
+
+  
   function logOut() {
     document.cookie = "connect.sid=; Max-Age=-99999999";
     Axios.get("https://gossip-backend.vercel.app/logout").then((response) => {
