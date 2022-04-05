@@ -7,7 +7,7 @@ import Chat from "../components/Chat";
 const socket = io.connect("https://gossip-backend.vercel.app");
 
 function Secrets(props) {
-  const [secrets, setSecrets] = useState([{ content: "lllll", rating: 8 }]);
+  const [secrets, setSecrets] = useState([]);
   //const myAppUrl = "http://localhost:3001";
   const { state } = useLocation();
   const [shownChats, setShownChats] = useState([]);
@@ -32,7 +32,7 @@ function Secrets(props) {
       res.text().then((data) => {
         console.log(data);
         if (data === "unauthorized") {
-          //navigate("/");
+          navigate("/");
         } else {
           setSecrets(JSON.parse(data));
         }
