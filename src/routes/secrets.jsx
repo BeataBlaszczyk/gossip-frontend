@@ -37,10 +37,10 @@ function Secrets(props) {
           setSecrets(JSON.parse(data));
         }
       });
-    });
 
 
-    fetch("https://gossip-backend.vercel.app/getrooms", {
+
+      fetch("https://gossip-backend.vercel.app/getrooms", {
         method: "GET",
         credentials: "include",
         withCredentials: true,
@@ -58,6 +58,10 @@ function Secrets(props) {
           setRoomList(JSON.parse(data))});
         
       })
+      
+    });
+
+
 
     //function klik(){
     //console.log("ŁADUJE")
