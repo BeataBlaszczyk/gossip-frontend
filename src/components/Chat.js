@@ -17,7 +17,8 @@ function Chat({ socket, shownChats, setShownChats, setRoomList, roomList }) {
       socket.on("new_room", (data) => { 
                
           
-          setRoomList((prev)=> {[...prev, data ]})})
+          setRoomList((prev) => [...prev, data ])
+        })
         
       
   },[socket]);
