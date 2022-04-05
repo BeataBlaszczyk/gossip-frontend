@@ -5,18 +5,13 @@ import axios from "axios";
 
 
 function Chat({ socket, shownChats, setShownChats, setRoomList, roomList }) {
-  useEffect(() => {
-    // axios
-    //   .get("https://gossip-backend.vercel.app/getrooms")
-    //   .then((res) => setRoomList(res.data));
-
+  
+    useEffect(() => {
     
-   
-      
-
       socket.on("new_room", (data) => { 
                
-          
+          console.log("SOCKET")
+          console.log(data)
           setRoomList((prev) => [...prev, data ])
         })
         
