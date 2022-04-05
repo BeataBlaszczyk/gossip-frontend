@@ -31,7 +31,7 @@ function Chat({ socket, shownChats, setShownChats }) {
       });
       
 
-      //socket.on("new_room", (data) => {console.log("sockety")});
+      socket.on("new_room", (data) => {console.log("room added")});
 
   },[]);
 
