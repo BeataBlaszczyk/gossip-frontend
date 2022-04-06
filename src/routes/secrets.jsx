@@ -108,7 +108,7 @@ function Secrets(props) {
 
   function ratingUp(secret){
     console.log("up")
-    element.rating += 1  
+    secret.rating += 1  
     fetch("https://gossip-backend.vercel.app/rating", secret ,{
       method: "PATCH",
       credentials: "include",
