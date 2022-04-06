@@ -232,6 +232,12 @@ width: 25%;
 }
 
 #chat-window-container{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+  align-content: flex-end;
+  justify-content: flex-start;
+  align-items: flex-end;
   z-index: 10;
   position: absolute;
   bottom: 0;
