@@ -106,9 +106,8 @@ function Secrets(props) {
     });
   }
 
-  function ratingUp(secret){
-    console.log("up")
-    secret.rating += 1  
+  function changeRating(secret){
+   
     fetch("https://gossip-backend.vercel.app/rating",{
       method: "PATCH",
       credentials: "include",
@@ -129,8 +128,17 @@ function Secrets(props) {
   }
 
   function ratingDown(element){
-    console.log("down")
+   
     element.rating -= 1
+    changeRating(element)
+
+
+  }
+
+  function ratingUp(element){
+  
+  secret.rating += 1  
+  changeRating(element)
   }
 
   return (
