@@ -60,6 +60,7 @@ function Chat({ socket, shownChats, setShownChats, setRoomList, roomList }) {
   }
 
   async function createRoom() {
+      if (newRoom.roomName !== ""){
     await socket.emit("add_room", newRoom);
     // if (newRoom.roomName !== "") {
     //setRoomList((prev) => [...prev, newRoom]);
@@ -72,7 +73,7 @@ function Chat({ socket, shownChats, setShownChats, setRoomList, roomList }) {
       });
       setIsExpanded(false);
     });
-
+      }
     //}
   }
 
