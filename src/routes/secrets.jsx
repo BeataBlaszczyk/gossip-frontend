@@ -106,12 +106,27 @@ function Secrets(props) {
     });
   }
 
-  function ratingUp(){
+  function ratingUp(secret){
     console.log("up")
+    element.rating += 1  
+    fetch("https://gossip-backend.vercel.app/rating", secret ,{
+      method: "PATCH",
+      credentials: "include",
+      withCredentials: true,
+      crossDomain: true,
+
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    }).then((res) => {
+      console.log("updated")
+    });
   }
 
-  function ratingDown(){
+  function ratingDown(element){
     console.log("down")
+    element.rating -= 1
   }
 
   return (
@@ -128,8 +143,8 @@ function Secrets(props) {
                     <span className="fire">
                       <div className="myGrid">
                         🔥 <span class="rating">{element.rating}</span>
-                        <img className="thumbUp" onClick={ratingUp} />
-                        <img className="thumbDown" onClick={ratingDown} />
+                        <img className="thumbUp" onClick={()=>ratingUp(element)} />
+                        <img className="thumbDown" onClick={()=>ratingDown(element)} />
                       </div>
                     </span>
                     <span className="secret-text">{element.content}</span>
