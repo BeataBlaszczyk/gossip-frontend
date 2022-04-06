@@ -136,8 +136,7 @@ function Secrets(props) {
   }
 
   function ratingUp(element){
-  
-  secret.rating += 1  
+  element.rating += 1  
   changeRating(element)
   }
 
