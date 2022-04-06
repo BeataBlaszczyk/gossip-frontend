@@ -175,7 +175,7 @@ function secretsy(){
                   { {props.whatToDo} }
                 </button> */}
                 <button onClick={goHome} type="submit" className="btn btn-dark">
-                home
+                Home
                   {/* {props.whatToDo} */}
                 </button>
               </form>
