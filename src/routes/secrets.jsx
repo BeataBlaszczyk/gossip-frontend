@@ -121,8 +121,11 @@ function Secrets(props) {
       },
       body: JSON.stringify(secret)
     }).then((res) => {
-      console.log("updated")
-    });
+      res.text().then((data) => {
+        
+          setSecrets(JSON.parse(data));
+        })
+      });
   }
 
   function ratingDown(element){
