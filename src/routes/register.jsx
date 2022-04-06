@@ -166,16 +166,16 @@ function secretsy(){
                 </div>
 
                 <button className="btn btn-light" onClick={log2} >
-                  axios
+                {props.whatToDo}
                 </button>
 
            
-                <button onClick={log} type="submit" className="btn btn-dark">
+                {/* <button onClick={log} type="submit" className="btn btn-dark">
                 fetch
-                  {/* {props.whatToDo} */}
-                </button>
-                <button onClick={secretsy} type="submit" className="btn btn-dark">
-                secretsy
+                  { {props.whatToDo} }
+                </button> */}
+                <button onClick={goHome} type="submit" className="btn btn-dark">
+                home
                   {/* {props.whatToDo} */}
                 </button>
               </form>

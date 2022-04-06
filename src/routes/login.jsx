@@ -174,8 +174,8 @@ function secretsy(){
                 fetch
                   { {props.whatToDo} }
                 </button> */}
-                <button onClick={secretsy} type="submit" className="btn btn-dark">
-                secretsy
+                <button onClick={goHome} type="submit" className="btn btn-dark">
+                home
                   {/* {props.whatToDo} */}
                 </button>
               </form>
